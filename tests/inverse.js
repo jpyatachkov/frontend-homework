@@ -45,8 +45,8 @@ QUnit.module('Тестируем функцию inverse', () => {
 	});
 
 	QUnit.test('Функция не падает на некорректных аргументах', (assert) => {
-		assert.deepEqual(inverse([1, 2], 'sfg'), [1, 2]);
-		assert.deepEqual(inverse([1, 2], [1, 2]), [1, 2]);
+		assert.deepEqual(inverse([1, 2], 'sfg'), [2, 1]);
+		assert.deepEqual(inverse([1, 2], [1, 2]), [2, 1]);
 		assert.deepEqual(inverse('aaa'), 'aaa');
 	});
 });

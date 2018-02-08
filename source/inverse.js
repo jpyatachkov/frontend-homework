@@ -5,11 +5,12 @@ const inverse = (array, number = 0) => {
 		return array;
 	}
 
-	if (0 === number) {
-		return array.reverse();
-	} else if (number > 0) {
-		return [...array.slice(0, number), ...array.slice(number).reverse()];
-	} else {
-		return [...array.slice(0, number).reverse(), ...array.slice(number)];
+	switch (true) {
+		case (number > 0):
+			return [...array.slice(0, number), ...array.slice(number).reverse()];
+		case (number < 0):
+			return [...array.slice(0, number).reverse(), ...array.slice(number)];
+		default:
+			return array.reverse();
 	}
 };
